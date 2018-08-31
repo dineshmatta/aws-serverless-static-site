@@ -1,0 +1,16 @@
+service: aws-sls-static-site # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: serverless-static-site
+
+functions:
+  hello:
+    handler: handler.hello
